@@ -56,6 +56,8 @@ else
 
 	-h) ./backup.sh -h;;
 
+ 	-gui) ./backup.sh -gui;;
+
 	*) echo "Option $1 not recognized" ;;
 
 esac
