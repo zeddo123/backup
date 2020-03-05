@@ -1,15 +1,5 @@
 #!/bin/sh
 
-# verify the options
-if [ $# -eq 0 ]
-then
-        echo "Missing options!"
-        echo "(run $0 -h for help)"
-        echo ""
-        exit 0
-fi
-
-
 case "$1" in
 
 	-s)sudo mkdir /backup
@@ -20,10 +10,13 @@ case "$1" in
 
 	-c) echo "-c, compress data" && sudo tar -czf /backup/backup-$USER.tar.xz /home/$USER/Documents && sudo rm -rf /backup/backup-$USER.tar;;
 
-	-r) echo "-r restor data"&&mkdir backup && sudo tar -xzvf /backup/backup-$USER.tar.xz -C /home/$USER/backup  && sudo rm /backup/backup-$USER.tar.xz;;
+	-r) echo "-r restor data"&& mkdir /home/$USER/backup && sudo tar -xzvf /backup/backup-$USER.tar.xz -C /home/$USER/backup  && sudo rm /backup/backup-$USER.tar.xz;;
 
 	-h) echo "help option"
-		echo "-s, coping data for backup \n-ar, create tar file \n-c, compress data \n-r, restor data \n"
+			echo "-s, coping data for backup"
+			echo "-ar, create tar file"
+			echo "-c, compress data"
+			echo "-r, restor data"
 		;;
 
 	*) echo "Option $1 not recognized" ;;
