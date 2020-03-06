@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 case "$1" in
 
@@ -29,7 +29,7 @@ case "$1" in
 			--button="restore data":5
 
 		foo=$?
-
+		echo $foo
 		[[ $foo -eq 1 ]] && exit 0
 
 		if [[ $foo -eq 2 ]]; then
