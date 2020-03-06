@@ -40,7 +40,7 @@ case "$1" in
 
 		elif [[ $foo -eq 4 ]]; then
 			./backup.sh -c
-		
+
 		else
 			./backup.sh -r
 		fi
